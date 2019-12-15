@@ -7,7 +7,7 @@ next: {(d;idx):x`d`idx; op:pad d@idx; (fn;l):I@op@3 4; i:d@idx+!l
 / Next steps: add support for input and output
 
 f:**{~99=(x`d)@x`idx} next/
-d1:@[.-1_1:`2.txt;1 2;:;12 2]
+d1:@[.-1_1:`02.txt;1 2;:;12 2]
 f `d`idx!(d1;0)
 \\
 d2:@[d1;1 2;:;]'z:+!2#100

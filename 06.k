@@ -1,4 +1,4 @@
-(v;k):("nn";")")0:`6.txt
+(v;k):("nn";")")0:`06.txt
 
 / (v;k): + `n$")"\:'" "\:"COM)B B)C C)D D)E E)F B)G G)H D)I E)J J)K K)L"
 (#,/(k!v)\'k)-2*#k
