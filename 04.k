@@ -5,6 +5,11 @@ i:"193651-649729"
 
 / answers: 1605 1102
 
+/ Attila (faster):
+x@:&&/~<':+x:${x+!1+y-x}.`i$"-"\:"193651-649729"
++/{6>#?x}'x
++/(2 in freq)'x
+
 / can we get the counts in a matrix that we can flip? save a bit on line 1?
 / all we need is the minimum count above 1... and therefore digits with >1 occurrence. then (a) +/~~ and (b) +/2=.
 \\
