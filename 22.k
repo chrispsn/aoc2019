@@ -7,3 +7,5 @@ next:{$["deal"~y@!4
         $["stack"~-5#y; |x; dwi[x;`i$*|" "\:y]]
         cut[x;`i$4_y]]}
 (next/[!10007;f])?2019
+
+/ Answer: 2480
