@@ -23,11 +23,10 @@ d:0:`10.txt    / comment to use example input instead
 rocks:(+|!2##d)@&"#"=,/d
 line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/
 counts:{-1+#?line'x-/:rocks}'rocks
-::a1:`count`posn!(counts;rocks)@\:*>counts
+::a1:`count`posn!*|^+(counts;rocks)
 
 renorm:.[rocks-\:a1`posn; (;1); -:]
-mag:+/{x exp 2}'
-(g;z;r):+^+(line'renorm; mag'renorm; rocks)
+(g;NA;r):+^+(line'renorm; {+/x*x}'renorm; rocks)
 order:(r@,/+. =g)^(2#0N;a1`posn)
 100/:order@199
 
