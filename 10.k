@@ -22,7 +22,7 @@ d:(".#..##.###...#######"
 d:0:`10.txt    / comment to use example input instead
 rocks:(+|!2##d)@&"#"=,/d
 line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/
-counts:{-1+#?line'x-/:rocks}'rocks
+counts:-1+{#?line'x-/:rocks}'rocks
 ::a1:`count`posn!*|^+(counts;rocks)
 
 renorm:.[rocks-\:a1`posn; (;1); -:]
