@@ -26,8 +26,8 @@ deltas: rocks-\/rocks
 counts:-1+(#?line')'deltas  / exclude the center line now?
  \ a1:`count`posn! last ^+(counts;rocks)
 
-renorm: +1 -1*+deltas@rocks?a1`posn  / eliminate by making y axis -ve from very start?
-s:+^+(line'renorm; {+/x*x}'renorm; rocks)
+renorm: 1 -1* +deltas rocks?a1`posn  / eliminate by making y axis -ve from very start?
+s:+^+(line'+renorm; +/{x*x}renorm; rocks)
 strip: {(,0N)_,/x@\/!|/#'x} / workaround for k9 flip being less tolerant than k7
 order:(,a1`posn)_(last s) strip @ last .=*s
 100/:order@199
