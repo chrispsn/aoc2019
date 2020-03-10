@@ -22,14 +22,14 @@ d:(".#..##.###...#######"
 / d:0:`10.txt    / comment to use example input instead
 rocks:(+|!2##d)@&"#"=,/d
 line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/
-deltas: {((x~)_rocks)-\x}
-counts:{#? line' deltas x}'rocks
+deltas: rocks-\/rocks
+counts:-1+(#?line')'deltas  / exclude the center line now?
  \ a1:`count`posn! last ^+(counts;rocks)
 
-renorm: +(1 -1)*+deltas a1`posn
-s:+^+(line'renorm; {+/x*x}'renorm; (,a1`posn)_rocks)
-strip: {(0N~)_,/x@\/!|/#'x}  / workaround for k9 flip being less tolerant than k7
-order:(last s) @ strip @ last .=*s
+renorm: +1 -1*+deltas@rocks?a1`posn  / eliminate by making y axis -ve from very start?
+s:+^+(line'renorm; {+/x*x}'renorm; rocks)
+strip: {(,0N)_,/x@\/!|/#'x} / workaround for k9 flip being less tolerant than k7
+order:(,a1`posn)_(last s) strip @ last .=*s
 100/:order@199
 
 / answers: 288 (count); 616
