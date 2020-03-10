@@ -21,15 +21,16 @@ d:(".#..##.###...#######"
 
 / d:0:`10.txt    / comment to use example input instead
 rocks:(+|!2##d)@&"#"=,/d
-line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/
-deltas: rocks-\/rocks
-counts:-1+(#?line')'deltas  / exclude the center line now?
- \ a1:`count`posn! last ^+(counts;rocks)
+line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/  / how to vectorise?
+diffs:rocks-\/rocks
+counts:-1+(#?line')'diffs  / exclude the center line now? needs splice?
+index:*>counts
+ \ a1:`count`posn!(counts;rocks)@\index
 
-renorm: 1 -1* +deltas rocks?a1`posn  / eliminate by making y axis -ve from very start?
-s:+^+(line'+renorm; +/{x*x}renorm; rocks)
-strip: {(,0N)_,/x@\/!|/#'x} / workaround for k9 flip being less tolerant than k7
-order:(,a1`posn)_(last s) strip @ last .=*s
+renorm:1 -1* +diffs index  / eliminate by changing line fn?
+s:+^(+(line'+renorm; +/{x*x}renorm; rocks))@(index=)_!#rocks
+strip:{(,0N)_,/x@\/!|/#'x} / workaround for k9 flip being less tolerant than k7
+order:(last s) strip @ last .=*s  / drop item at 'index' instead of doing exclude? again: splice?
 100/:order@199
 
 / answers: 288 (count); 616
