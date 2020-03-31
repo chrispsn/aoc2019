@@ -20,17 +20,17 @@ d:(".#..##.###...#######"
  "###.##.####.##.#..##")
 
 / d:0:`10.txt    / comment to use example input instead
-rocks:(+|!2##d)@&"#"=,/d
-line:{$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/  / how to vectorise?
-diffs:(,0 0)_/rocks-\/rocks
-counts:(#?line')'diffs
-index:*>counts
+rocks: (+|!2##d)@&"#"=,/d
+line: {$[&[~x<0;y>0];0;&[x>0;~y>0];1;&[~x>0;y<0];2;3],x%y}/  / how to vectorise?
+diffs: (,0 0)_/rocks-\/rocks
+counts: (#?line')'diffs
+index: *>counts
  \ base:`count`posn!(counts;rocks)@\index
 
-renorm:1 -1*+diffs index  / eliminate by changing line fn?
-s:+^+(line'+renorm; +/{x*x}renorm; (,base`posn)_rocks)
-strip:{(,0N)_,/x@\/!|/#'x}
-order:(:/s) strip@ (=*s)[]
+renorm: 1 -1*+diffs index
+s: +^+(line'+renorm; +/{x*x}renorm; (,base`posn)_rocks)
+strip: {(,/x)@<,/,\'[(!#)'x;!#x]}
+order: (:/s) strip@ :/ . =*s
 100/:order@199
 
 / answers: 288 (count); 616
