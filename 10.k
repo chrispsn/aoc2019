@@ -29,7 +29,7 @@ index: *>counts
 
 renorm: 1 -1*+diffs index
 s: +^+(line'+renorm; +/{x*x}renorm; (,base`posn)_rocks)
-strip: {(,/x)@<,/,\'[(!#)'x;!#x]}
+strip: {(,/x)@<,/ (!#)'x ,\' !#x}
 order: (:/s) strip@ :/ . =*s
 100/:order@199
 
