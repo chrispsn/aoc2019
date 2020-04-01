@@ -28,9 +28,9 @@ index: *>counts
  \ base:`count`posn!(counts;rocks)@\index
 
 renorm: 1 -1*+diffs index
-s: +^+(line'+renorm; +/{x*x}renorm; (,base`posn)_rocks)
-strip: {(,/x)@<,/ (!#)'x ,\' !#x}
-order: (:/s) strip@ :/ . =*s
+s: <+(l:line'+renorm; +/{x*x}renorm)
+strip: {(,/x)@<,/(!#)'x}
+order: (((,base`posn)_rocks)s)strip@ =l s
 100/:order@199
 
 / answers: 288 (count); 616
