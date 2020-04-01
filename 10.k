@@ -29,8 +29,7 @@ index: *>counts
 
 renorm: 1 -1*+diffs index
 s: <+(l:line'+renorm; +/{x*x}renorm)
-strip: {(,/x)@<,/(!#)'x}
-order: ((,base`posn)_rocks)s strip@ =l s
+order: ((,base`posn)_rocks)s@<,/<'=l s
 100/:order@199
 
 / answers: 288 (count); 616
