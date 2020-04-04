@@ -28,8 +28,14 @@ index: *>counts
  \ base:`count`posn!(counts;rocks)@\index
 
 renorm: 1 -1*+diffs index
+
+/ approach 1 (less clear?)
 s: <+(l:line'+renorm; +/{x*x}renorm)
 order: ((,base`posn)_rocks)s@<,/<'=l s   / could do (!#)' instead of <'
+
+/ approach 2 (dict-y; slower?)
+strip: {(,/x)@<,/(!#)'x}
+order: strip@!?=*'?^(+(line'+renorm; +/{x*x}renorm))!(,base`posn)_rocks
 
 100/:order@199
 
