@@ -1,6 +1,6 @@
-i:1:`08.txt; d:6 25
-*/#:'1_=i@*<+/~+i:(0N;*/d)#i-"0"
-` 0:d#" #"@{*x^2}'+i;
+d:6 25; n:(`c?'1:`8.txt)-`c?"0"  / char to int WIP?
+*/`freq@1 2#i@*<+/'~i:(*/d)^n
+(:/d)^" #"@(*0 1#)'+i;           / wonder if there's a way to tighten this up - eg before could do x^2
 
 / answers: 1690 ZPZUB
 \\
