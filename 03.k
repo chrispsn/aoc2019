@@ -7,10 +7,10 @@ ofst: :x(1+!:/y;0)
 xtnd: {[path;inst] path,+(last path)+ofst/inst}
 abs: :$[0<x;x;-x]
 
-/  exclude center; get intersections; generate wires;      read data
-intersect:(,0 0)_  #/                 wires:xtnd/[,0 0;]'  (read'","\)' data
+/  exclude center; get intersections; generate wires;     read data
+intersect:(,0 0)_  #/                 wires:xtnd/[,0 0;]' (read'","\)' data
 
 / answers: 8015 163676; test answers: 135 410
-(&/+/)'(+abs intersect; wires?\:intersect)
+(&/+/)'(+abs@; wires?\:)@\:intersect
 
 \\
