@@ -6,7 +6,7 @@ data: ("R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51"
 
 steps: {[x;y] facing: (,0 1; ,1 0; ,0 -1; ,-1 0)"URDL"?*+x
               count: `i$y
-             ,/ count #' facing}
+              ,/ count #' facing}
 abs: :$[0<x;x;-x]
 
 wires: (+\ steps/ + 0 1^/:","\)'data
