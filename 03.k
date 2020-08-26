@@ -4,13 +4,12 @@ data: ("R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51"
        "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7")
 / data: 0:`3.txt  / uncomment to run real data
 
-ofst: {[x;y] facing: (|; :; -|; -)"URDL"?*+x
-             steps:  (:(1+!x;0))' `i$y
-             facing @' steps}
-walk: {[path;steps] path,+(last path)+steps}
+ofst: {[x;y] facing: (,0 1; ,1 0; ,0 -1; ,-1 0)"URDL"?*+x
+             ,/ (`i$y) #' facing}
 abs: :$[0<x;x;-x]
 
-wires: ((0#,0 0) walk/ ofst/ + 0 1^/:","\)'data
+/ scan inspired by: https://www.reddit.com/r/adventofcode/comments/e5bz2w/2019_day_3_solutions/f9jwy1o/
+wires: (+\ ofst/ + 0 1^/:","\)'data
 intersect: #/wires
 
 / answers: 8015 163676; test: 135 410
