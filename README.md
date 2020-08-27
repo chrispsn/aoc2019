@@ -1,8 +1,10 @@
-# aoc2019
-k7 answers for a few Advent of Code 2019 problems.
+# Advent of Code 2019
 
-To run, first [download the latest k7 via Anaconda](https://anaconda.org/shaktidb) (tested on 2019-09-25 14:44:44 on a Ubuntu VM).
+k7/k9 answers for a few Advent of Code 2019 problems.
 
-Then run an answer via (eg) `k 01.k`.
+k9 is available at [shakti.sh](https://shakti.sh/). k7 isn't available anymore besides the [online kc console](https://kparc.io/kc/).
 
-See also [ngn's answers](https://bitbucket.org/ngn/k/src/master/aoc19/) written in ngn/k.
+See also:
+
+- [ngn's answers](https://bitbucket.org/ngn/k/src/master/aoc19/) in ngn/k
+- [llelf's answers](https://github.com/llelf/advent2019) in k7
