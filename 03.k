@@ -4,21 +4,18 @@ data: ("R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51"
        "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7")
 / data: 0:`3.txt  / uncomment to run real data
 
-steps: {[x;y] facing: (,0 1; ,1 0; ,0 -1; ,-1 0)"URDL"?*+x
-              count: `i$y
-              ,/ count #' facing}
-abs: :$[0<x;x;-x]
-
-wires: (+\ steps/ + 0 1^/:","\)'data
-intersect: #/wires
+steps: :((0 1; 1 0; 0 -1; -1 0)"URDL"?x[;0])@&`i$1_/:x
+wires: (+\ steps@ ","\)'data
+abs: :x*(x>0)-x<0
+&/+/ +abs #/wires
+&/+/ 1+wires?\: #/wires
 
 / answers: 8015 163676; test: 135 410
 / 1+ in part 2 since we're indexing from zero
-(&/+/)'(+abs@/:; 1+wires?\:)@\:intersect
 
 \\
 
-/ k7
+/ old k7 version
 
 d:("R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51"
    "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7")
