@@ -6,7 +6,7 @@ data: ("R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51"
 
 steps: :((0 1; 1 0; 0 -1; -1 0)"URDL"?x[;0])@&`i$1_/:x
 wires: (+\ steps@ ","\)'data
-abs: :x*(x>0)-x<0
+abs: :x*(x>0)-x<0   / all xings in data are +ve; so remove this?
 &/+/ +abs@#/wires
 &/+/ 1+wires?\: #/wires
 
